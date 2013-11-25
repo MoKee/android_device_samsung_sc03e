@@ -16,8 +16,8 @@
         "target_path": "kernel/samsung/smdk4412"
     },
     {
-        "repository": "android_vendor_samsung_i9305",
-        "target_path": "vendor/samsung/i9305"
+        "repository": "android_vendor_samsung_sc03e",
+        "target_path": "vendor/samsung/sc03e"
     },
     {
         "repository": "android_hardware_samsung",
