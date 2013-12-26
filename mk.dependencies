@@ -12,8 +12,8 @@
         "target_path": "device/samsung/smdk4412-qcom-common"
     },
     {
-        "repository": "android_kernel_samsung_smdk4412",
-        "target_path": "kernel/samsung/smdk4412"
+        "repository": "android_kernel_samsung_sc03e",
+        "target_path": "kernel/samsung/sc03e"
     },
     {
         "repository": "android_vendor_samsung_sc03e",

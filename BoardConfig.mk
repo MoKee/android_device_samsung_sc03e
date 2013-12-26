@@ -32,8 +32,8 @@ COMMON_GLOBAL_CFLAGS += -DPROPERTY_PERMS_APPEND='{ "ril.ks.status", AID_SYSTEM, 
 COMMON_GLOBAL_CFLAGS += -DCAMERA_WITH_CITYID_PARAM
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/samsung/exynos4412dcm
-TARGET_KERNEL_CONFIG := cyanogenmod_sc03e_defconfig
+TARGET_KERNEL_SOURCE := kernel/samsung/sc03e
+TARGET_KERNEL_CONFIG := mk_sc03e_defconfig
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/sc03e/rootdir/fstab.smdk4x12

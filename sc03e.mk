@@ -17,7 +17,7 @@
 LOCAL_PATH := device/samsung/sc03e
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS= $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so
@@ -33,40 +33,45 @@ PRODUCT_PROPERTY_OVERRIDES= \
 
  
 # Init files
-PRODUCT_COPY_FILES= \
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.smdk4x12:root/fstab.smdk4x12 \
     $(LOCAL_PATH)/rootdir/init.target.rc:root/init.target.rc \
     $(LOCAL_PATH)/rootdir/lpm.rc:root/lpm.rc \
     $(LOCAL_PATH)/rootdir/ueventd.smdk4x12.rc:root/ueventd.smdk4x12.rc
 
 # Audio
-PRODUCT_COPY_FILES= \
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/tiny_hw.xml:system/etc/sound/m3
 
 # Camera
-PRODUCT_PACKAGES= \
+PRODUCT_PACKAGES += \
     camera.smdk4x12
 
 # GPS
-PRODUCT_COPY_FILES= \
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
 # Product specific Packages
-PRODUCT_PACKAGES= \
+PRODUCT_PACKAGES += \
     DeviceSettings
 
+# Sensors
+PRODUCT_PACKAGES += \
+    sensors.smdk4x12
+
 # NFC
-PRODUCT_PACKAGES= \
+PRODUCT_PACKAGES += \
     nfc.exynos4 \
     libnfc \
     libnfc_jni \
     Nfc \
     Tag
 
-PRODUCT_COPY_FILES= \
+PRODUCT_COPY_FILES += \
     packages/apps/Nfc/migrate_nfc.txt:system/etc/updatecmds/migrate_nfc.txt \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
 
 # NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)
@@ -75,22 +80,22 @@ else
     NFCEE_ACCESS_PATH := $(LOCAL_PATH)/configs/nfcee_access_debug.xml
 endif
 
-PRODUCT_COPY_FILES= \
+PRODUCT_COPY_FILES += \
     $(NFCEE_ACCESS_PATH):system/etc/nfcee_access.xml
 
-PRODUCT_PACKAGES= \
+PRODUCT_PACKAGES += \
     com.android.nfc_extras
 
 $(call inherit-product, vendor/mk/config/nfc_enhanced.mk)
 
 # RIL
-PRODUCT_PROPERTY_OVERRIDES= \
+PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=SamsungQualcommRIL \
     mobiledata.interfaces=pdp0,wlan0,gprs,ppp0 \
     ro.telephony.ril.v3=exynos4RadioState
 
 # These are the hardware-specific features
-PRODUCT_COPY_FILES= \
+PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
