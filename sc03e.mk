@@ -28,8 +28,8 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Default Locale
 PRODUCT_PROPERTY_OVERRIDES= \
-    ro.product.locale.language=ja \
-    ro.product.locale.region=JP
+    ro.product.locale.language=zh \
+    ro.product.locale.region=CN
 
  
 # Init files

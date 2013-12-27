@@ -40,7 +40,7 @@ TARGET_RECOVERY_FSTAB := device/samsung/sc03e/rootdir/fstab.smdk4x12
 RECOVERY_FSTAB_VERSION := 2
 
 # assert
-TARGET_OTA_ASSERT_DEVICE := m3,m3xx,sc03e,SC-03E
+TARGET_OTA_ASSERT_DEVICE := m3,m3xx,sc03e,SC-03E,GT-I9305,i9305
 
 # inherit from the proprietary version
 -include vendor/samsung/sc03e/BoardConfigVendor.mk
