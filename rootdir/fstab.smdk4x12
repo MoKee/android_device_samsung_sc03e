@@ -16,6 +16,6 @@
 /devices/platform/s5p-ehci                      auto        auto        defaults    voldmanaged=usbdisk0:auto
 
 # recovery
-/dev/block/mmcblk0p8                            /boot                   emmc        defaults    recoveryonly
+/dev/block/platform/dw_mmc/by-name/BOOT         /boot                   emmc        defaults    recoveryonly
 /dev/block/mmcblk0p9                            /recovery               emmc        defaults    recoveryonly
 /dev/block/mmcblk0p10                           /modem                  emmc        defaults    recoveryonly
