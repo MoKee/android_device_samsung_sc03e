@@ -17,7 +17,6 @@
 /efs/bluetooth(/.*)?                    u:object_r:bluetooth_data_file:s0
 
 # Sensors
-/dev/akm8963                            u:object_r:sensors_device:s0
 /dev/akm8975                            u:object_r:sensors_device:s0
 /efs/gyro_cal_data                      u:object_r:sensors_data_file:s0
 
@@ -52,11 +51,9 @@
 
 # Binaries
 /system/bin/qmuxd                u:object_r:qmux_exec:s0
-/system/bin/netmgrd              u:object_r:netmgrd_exec:s0
 /system/bin/efsks                u:object_r:kickstart_exec:s0
 /system/bin/ks                   u:object_r:kickstart_exec:s0
 /system/bin/qcks                 u:object_r:kickstart_exec:s0
-/system/bin/sec-ril              u:object_r:secril-daemon_exec:s0
 
 # Sockets
 /dev/socket/qmux_audio(/.*)?     u:object_r:qmuxd_socket:s0
