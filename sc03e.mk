@@ -26,12 +26,6 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-# Default Locale
-PRODUCT_PROPERTY_OVERRIDES= \
-    ro.product.locale.language=zh \
-    ro.product.locale.region=CN
-
- 
 # Init files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/fstab.smdk4x12:root/fstab.smdk4x12 \
@@ -48,8 +42,8 @@ PRODUCT_PACKAGES += \
     camera.smdk4x12
 
 # GPS
-#PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
 # Product specific Packages
 PRODUCT_PACKAGES += \
@@ -92,7 +86,7 @@ $(call inherit-product, vendor/mk/config/nfc_enhanced.mk)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=SamsungQualcommRIL \
     mobiledata.interfaces=pdp0,wlan0,gprs,ppp0 \
-    ro.telephony.ril.v3=exynos4RadioState
+    ro.telephony.ril.v3=newDriverCall,newDialCode
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
