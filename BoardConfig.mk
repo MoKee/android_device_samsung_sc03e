@@ -33,7 +33,7 @@ COMMON_GLOBAL_CFLAGS += -DCAMERA_WITH_CITYID_PARAM
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/sc03e
-TARGET_KERNEL_CONFIG := mk_sc03e_defconfig
+TARGET_KERNEL_CONFIG := mk_sc03e_aosp_defconfig
 
 # Recovery
 TARGET_RECOVERY_FSTAB := device/samsung/sc03e/rootdir/fstab.smdk4x12
@@ -50,6 +50,8 @@ BOARD_SEPOLICY_DIRS += \
     device/samsung/sc03e/selinux
 
 BOARD_SEPOLICY_UNION += \
+    bluetooth.te \
+    radio.te \
     file_contexts \
     te_macros \
     device.te \
@@ -60,9 +62,17 @@ BOARD_SEPOLICY_UNION += \
     kickstart.te \
     mediaserver.te \
     netmgrd.te \
-    qmux.te \
+    qmiproxy.te \
+    qmuxd.te \
     rild.te \
     secril.te \
+    servicemanager.te \
+    sysinit.te \
     system.te \
+    system_server.te \
+    time_daemon.te \
     ueventd.te \
-    wpa_supplicant.te
+    vold.te \
+    wpa.te \
+    wpa_supplicant.te \
+    zygote.te
